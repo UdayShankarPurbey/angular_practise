@@ -1,0 +1,34 @@
+<p>signal-basics works!</p>
+
+<p>{{ getName() }}</p>
+
+<p>{{ fullName() }}</p>
+
+<p>{{ firstNameCapitalized() }}</p>
+
+<button (click)="setName()">Set Name</button>
+
+<button (click)="updateName()">Update Name</button>
+
+<button (click)="addUserInfo()">Add Users</button>
+
+<button (click)="addNewUser()">Add New User</button>
+
+<hr>
+
+<h3>User List</h3>
+
+@if (userInfo().length > 0) {
+
+  @for (user of userInfo(); track user.name) {
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+    <p>Gender: {{ user.gender }}</p>
+    <hr>
+  }
+
+} @else {
+
+  <p>No users available.</p>
+
+}
